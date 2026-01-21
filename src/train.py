@@ -63,6 +63,13 @@ def train_and_evaluate():
 
     print("Accuracy:", accuracy_score(y_test, predictions)) # prints accuracy (0-1)
     print(classification_report(y_test, predictions)) # prints precision, recall and f1-score for each class
-
+    # precision = how often the model was correct when it predicts this class
+    # recall = how many actual samples of the class the model correctly predicts
+    # F1-score = precision and recall harmonic mean
+    # support = number of samples for this class in the test set
+    # macro = simple average of the metric across classes (treats all classes equally)
+    # weighted = average of the metric weighted by the number of samples per class
+    # macro and weighted dont apply here as the test data is stratisfied to give an equal split
+    
 if __name__ == "__main__": # only runs code if file executed directly, prevents accidental training
     train_and_evaluate()
