@@ -1,3 +1,5 @@
+import joblib # used to save and load objects (my trained model)
+from pathlib import Path # helps work with file paths
 from nltk.corpus import movie_reviews # imports dataset
 from sklearn.model_selection import train_test_split # a function used to shuffle and split dataset into training and testing while keeping labels aligned
 from sklearn.feature_extraction.text import TfidfVectorizer # an object used to convert text into numerical features using TF-IDF weighting
@@ -59,6 +61,10 @@ def train_and_evaluate():
     pipeline = create_pipeline() # create pipeline
     pipeline.fit(X_train, y_train) # train the pipeline on the data
 
+    Path("models").mkdir(exist_ok=True) # creates a empty models folder if it doesnt exist
+    joblib.dump(pipeline, "models/sentiment_pipeline.joblib") # saves trained pipeline object (TF-DF vectorizer and model)
+    print("Saved model to models/sentiment_pipeline.joblib") # comfirms save by outputting to user
+
     predictions = pipeline.predict(X_test) # predicts positive or negative
 
     print("Accuracy:", accuracy_score(y_test, predictions)) # prints accuracy (0-1)
@@ -70,6 +76,6 @@ def train_and_evaluate():
     # macro = simple average of the metric across classes (treats all classes equally)
     # weighted = average of the metric weighted by the number of samples per class
     # macro and weighted dont apply here as the test data is stratisfied to give an equal split
-    
+
 if __name__ == "__main__": # only runs code if file executed directly, prevents accidental training
     train_and_evaluate()
