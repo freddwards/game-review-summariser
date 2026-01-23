@@ -9,7 +9,7 @@ my project sumarises reviews by:
 
 ### Training
 
-- Reviews are loaded from the NLTK `movie_reviews` dataset
+- Reviews are loaded from the NLTK movie_reviews dataset
 - Data is split into training and test sets (80/20, stratified)
 - Text is converted into numerical features using TF-IDF
 - A Logistic Regression model from sklearn learns sentiment patterns
@@ -34,4 +34,9 @@ Accuracy: ~82% on test data
 - **TF-IDF** - converts text into numerical feature weights 
 - **Logistic Regression** - learns sentiment from TF-IDF weights
 - **joblib** - saves and loads the model
+
+## Dataset
+
+A large, well labelled public game review sentiment dataset was not available. the model was trained on the NLTK movie_reviews  but the project is tested on real game reviews to assess how well sentiment classification transfers across similar review domains. Accuracy is based on movie review test data.
+
 
