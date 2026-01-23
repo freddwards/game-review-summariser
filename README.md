@@ -1,8 +1,8 @@
-# Game Review Sentiment Analyzer & Summariser
+# Game Review Sentiment Analyser & Summariser
 
 my project sumarises reviews by:
 
-- classifying thhe review with a sentiment (positive or negative)
+- classifying the review with a sentiment (positive or negative)
 - generating a short summary using the most informative statement
 
 ## How it works
@@ -20,17 +20,18 @@ my project sumarises reviews by:
  - saved model is loaded
  - User input is classified as positive or negative using trained model
  - A confidence score is calculated using class probabilities (from training test)
- - The review is summarised using extractive sentence scoring  (2 most informative senances of review combined)
+ - The review is summarised using extractive sentence scoring  (2 most informative sentences of review combined)
 
 ## Performance
 
 Accuracy: ~82% on test data
 
-## Technologys used
+## Technologies used
 
-- Python 3 (programming language)
-- scikit-learn (helper classes and functions in training ai)
-- NLTK (movie review dataset)
-- TF-IDF (converts text into numerical weights)
-- Logistic Regression (learns sentiment of weights through iteration)
-- joblib (used to save and load the model)
+- **Python 3** - programming language
+- **scikit-learn** - machine learning models and utilities
+- **NLTK** - movie review dataset and sentence tokenisation
+- **TF-IDF** - converts text into numerical feature weights 
+- **Logistic Regression** - learns sentiment from TF-IDF weights
+- **joblib** - saves and loads the model
+
