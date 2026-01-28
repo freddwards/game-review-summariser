@@ -1,5 +1,5 @@
 # Game Review Sentiment Analyser & Summariser
-currently in progress
+- currently in progress -
 
 my project sumarises reviews by:
 
